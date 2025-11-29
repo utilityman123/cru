@@ -104,7 +104,7 @@ hr {
 
 /* home button */
 .home-btn {
-  position: absolute !important;
+  position: fixed !important;
   top: 50px !important;
   left: 400px !important;
   z-index: 10;
@@ -129,7 +129,7 @@ hr {
 
 .download-box {
    background-color: #bdbdbd;
-    padding: 10px 20px;
+    padding: 5px 20px 20px 20px;
     border-radius: 12px;
     margin: 10px auto;
     text-align: center;
@@ -154,5 +154,9 @@ hr {
     transform: scale(0.9);
 }
 
-
-
+/* for mobile */
+@media (max-width: 600px) {
+  .home-btn{
+    left: 5px !important;
+  }
+}
