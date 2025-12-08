@@ -43,7 +43,7 @@ hr {
 /* Project Card */
 .project-card {
     background: #bdbdbd;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #9d9696;
     border-radius: 12px;
     margin-top: 10px;
     padding: 0px 20px;
@@ -160,5 +160,6 @@ hr {
     left: 5px !important;
   }
 }
+
 
 
