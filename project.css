@@ -15,6 +15,7 @@ body {
 
 h1 { 
     margin: 20px 0px;
+    font-weight:600;
 }
 
 hr {
@@ -25,7 +26,7 @@ hr {
 
 .title {
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .subtitle {
@@ -60,7 +61,7 @@ hr {
 .project-heading {
     font-size: 28px;
     margin-bottom: 12px;
-    font-weight: 600;
+    : 600;
     color: #111;
 }
 
@@ -129,7 +130,7 @@ hr {
 
 .download-box {
    background-color: #bdbdbd;
-    padding: 10px 20px 10px 20px;
+    padding: 5px 20px 20px 20px;
     border-radius: 12px;
     margin: 10px auto;
     text-align: center;
@@ -143,7 +144,7 @@ hr {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     border-radius: 10px;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
@@ -160,6 +161,7 @@ hr {
     left: 5px !important;
   }
 }
+
 
 
 
