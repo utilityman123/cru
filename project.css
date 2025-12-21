@@ -1,12 +1,59 @@
+/* =========================================
+        COLOR VARIABLES & THEME SETUP
+   ========================================= */
+:root {
+    /* LIGHT MODE (Default) */
+    --bg-color: #e0e0e0;
+    --text-color: #333;
+    --heading-color: #111;
+    --card-bg: #bdbdbd;
+    --box-bg: #bdbdbd;
+    --border-color: #9d9696;
+    --hr-color: #cfcfcf;
+    
+    /* Button Colors */
+    --home-btn-bg: #333;
+    --home-btn-text: #fff;
+    --theme-btn-bg: #333;
+    --theme-btn-text: #fff;
+}
+
+[data-theme="dark"] {
+    /* DARK MODE PALETTE */
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --card-bg: #1e1e1e;
+    --box-bg: #252525;
+    --border-color: #333;
+    --hr-color: #444;
+
+    /* Button Colors in Dark Mode */
+    --home-btn-bg: #e0e0e0;
+    --home-btn-text: #121212;
+    --theme-btn-bg: #f0f0f0;
+    --theme-btn-text: #121212;
+}
+
+/* =========================================
+   2. GLOBAL STYLES
+   ========================================= */
 body {
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
-    background: #e0e0e0;
-    color: #333;
+    background: var(--bg-color); 
+    color: var(--text-color);    
+    
+    /* Smooth transition when switching themes */
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Header Section */
+a {
+    color: #0070f3;
+    text-decoration: none;
+}
+
 .header {
     text-align: center;
     padding: 20px 20px 1px;
@@ -15,54 +62,29 @@ body {
 
 h1 { 
     margin: 20px 0px;
-    font-weight:600;
+}
+
+h1, h2 { 
+   font-weight: 600; 
 }
 
 hr {
   border: none;
   height: 3px;
-  background-color: #cfcfcf;
+  background-color: var(--hr-color);
+  margin: 40px 0;
 }
 
 .title {
     font-size: 48px;
     font-weight: 600;
+    color: var(--heading-color);
 }
 
 .subtitle {
     font-size: 20px;
     margin: 0px;
-    color: #333;
-}
-
-/* Project Window */
-.project-window {
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-/* Project Card */
-.project-card {
-    background: #bdbdbd;
-    border: 1px solid #9d9696;
-    border-radius: 12px;
-    margin-top: 10px;
-    padding: 0px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Project Heading */
-.project-heading {
-    font-size: 28px;
-    margin-bottom: 12px;
-    : 600;
-    color: #111;
+    color: var(--text-color);
 }
 
 p {
@@ -74,7 +96,33 @@ p {
     text-align: center;
 }
 
-/* Button */
+.project-window {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--card-bg); /* Uses variable */
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-heading {
+    font-size: 28px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
 .btn {
     display: inline-block;
     padding: 8px 14px;
@@ -90,51 +138,14 @@ p {
     background: #005bd1;
 }
 
-/* Links */
-a {
-    color: #0070f3;
-    text-decoration: none;
-}
-
-/* Horizontal line */
-hr {
-    border: none;
-    border-top: 1px solid #e6e6e6;
-    margin: 40px 0;
-}
-
-/* home button */
-.home-btn {
-  position: fixed !important;
-  top: 50px !important;
-  left: 400px !important;
-  z-index: 10;
-  margin: 0;
-
-  padding: 8px 16px;
-  background-color: #333;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 8px;
-
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.home-btn:hover {
-  background-color: #555;
-  transform: scale(1.05);
-  text-decoration: none;
-}
-
 .download-box {
-   background-color: #bdbdbd;
+    background-color: var(--box-bg); /* Uses variable */
     padding: 5px 20px 20px 20px;
     border-radius: 12px;
     margin: 10px auto;
     text-align: center;
     width: 80%;
+    transition: background 0.3s ease;
 }
 
 .download-btn {
@@ -146,22 +157,85 @@ hr {
     font-size: 18px;
     font-weight: 600;
     border-radius: 10px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .download-btn:hover {
     background-color: #0056b3;
-    box-shadow: 0px 0px 10px 2px rgba(0, 123, 255, 1.1);
     transform: scale(0.9);
+    /* The Blue Glow Effect */
+    box-shadow: 0px 0px 30px 5px rgba(0, 123, 255, 0.6);
+}
+
+/* Home Button - Fixed to Top Left */
+.home-btn {
+  position: fixed;
+  top: 50px;   
+  left: 400px;  
+  z-index: 100;
+  
+  padding: 8px 16px;
+  background-color: var(--home-btn-bg);
+  color: var(--home-btn-text);
+  
+  text-align: center;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none; 
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.home-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    
+    background-color: var(--theme-btn-bg);
+    color: var(--theme-btn-text);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 /* for mobile */
 @media (max-width: 600px) {
   .home-btn{
-    left: 5px !important;
+    left: 5px;
+  }
+  .project-card {
+      margin: 10px 10px auto ;
+  }
+  hr {
+      margin: 40px 10px auto ;
+  }
+
+  .theme-btn {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5px; 
+  }
+
+  .theme-btn:hover {
+    transform: translateX(-50%) scale(1.05);
   }
 }
-
-
-
 
